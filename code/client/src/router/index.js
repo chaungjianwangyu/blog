@@ -6,12 +6,12 @@ Vue.use(Router)
 const _import_ = file => () => import('views/' + file + '.vue')
 
 const router = new Router({
-    mode: 'history',
+    // mode: 'history',
     routes: [
         {
             path: '/',
             component: _import_('home/index'),
-            redirect: 'blog/all',
+            redirect: 'blog/全部',
             children: [
                 {
                     path: 'blog/:classify',

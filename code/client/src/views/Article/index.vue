@@ -5,15 +5,15 @@
             <Back></Back>
             <div class="content">
                 <div class="box">
-                    <Github class="github" :link="blogInfo.github" v-if="blogInfo.github"></Github>
+                    <!-- <Github class="github" :link="blogInfo.github" v-if="blogInfo.github"></Github> -->
                     <div class="entry">
                         <h1>{{blogInfo.title}}</h1>
                         <time>{{blogInfo.releaseTime | parseTime('{y}-{m}-{d}')}}</time>
                         <div class="intro fmt" v-html="blogHtml"></div>
                     </div>
-                    <div class="logo">
+                    <!-- <div class="logo">
                         <img :src="require(`src/images/source_single_${blogInfo.source === 1?1:blogInfo.source === 2?2:3}.png`)" alt="">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

@@ -33,17 +33,23 @@ const blog = {
                     then( res => {
                         state.loadingMore = false;
                         resolve(res)
+                        //console.log(res)
                         if (res.data.length <= 0 && params.pageindex > 1) return
+                        // if (res.data.length <= 0 && params.pageindex > 1) {
+                        //     commit('BLOGLIST', res.data)
+                        // }
                         if (params.pageindex > 1) {
+                            //console.log('222',state.list.concat(res.data))
                             commit('BLOGLIST', state.list.concat(res.data))
                         }else {
+                            //console.log('111',state.list.concat(res.data))
                             commit('BLOGLIST', res.data)
                         }
                         if (res.data.length >= state.pagesize) {
                             state.loadingBol = true;
                         }
                     }).catch( err => {
-                        // console.log(err)
+                        //console.log(err)
                         reject(err)
                     })
             })

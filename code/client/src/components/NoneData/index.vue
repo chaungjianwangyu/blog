@@ -9,6 +9,15 @@
 		.none-data-icon {
 			font-size: 100px;
 		}
+		overflow: hidden;
 	}
+
+	@media screen and (max-width: 800px) {
+		.none-data-wrapper {
+			img {
+				width: 10rem;
+			}
+		}          
+  	}
 	
 </style>

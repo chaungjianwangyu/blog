@@ -1,17 +1,26 @@
 <template>
     <section class="blog-wrapper">
         <ul v-if="blogList.length > 0">
-            <li class="article" v-for="(v, index) in blogList" :style="{'animation-delay': index%5*0.2+'s'}" @click="$router.push(`/article/${v._id}`)">
-                <Github class="github mouse-pointer" background="rgba(186, 164, 119, 0.99)" :link="v.github" v-if="v.github"></Github>
+            <li 
+                class="article" 
+                v-for="(v, index) in blogList"
+                :key="index"
+                :style="{'animation-delay': index%5*0.2+'s'}" 
+                @click="$router.push(`/article/${v._id}`)">
+                <!-- <Github class="github mouse-pointer" background="rgba(186, 164, 119, 0.99)" :link="v.github" v-if="v.github"></Github> -->
                 <time>{{v.createTime | parseTime('{y}-{m}-{d}')}}</time>
                 <h2 class="name">{{v.title}}</h2>
                 <div class="tags">
-                    <Tag v-for="tag in v.type" :text="tag" :path="tag"></Tag>
+                    <Tag 
+                        v-for="(tag,index) in v.type" 
+                        :key="index"
+                        :text="tag" 
+                        :path="tag"></Tag>
                 </div>
                 <div class="desc">{{v.desc}}</div>
-                <div class="source">
+                <!-- <div class="source">
                     <img :src="require(`src/images/source_single_${v.source}.png`)" alt="">
-                </div>
+                </div> -->
             </li>
         </ul>
         <NoneData v-else></NoneData>
@@ -48,6 +57,7 @@
         },
         methods: {
             getBlogData () {
+                console.log('请求',this.$route.params.classify,this.pageindex)
                 this.$store.dispatch('getBlogList', {
                     type: this.$route.params.classify,
                     pageindex: this.pageindex
@@ -63,6 +73,7 @@
         },
         watch: {
             $route (to, from) {
+                this.pageindex = 1
                 this.getBlogData()
             }
         }
@@ -99,10 +110,10 @@
                 box-shadow: 5px 15px 30px 5px rgba(0, 0, 0, 0.15);
             }
 
-            .github {
-                position: absolute;
-                right:0;top:0;
-            }
+            // .github {
+            //     position: absolute;
+            //     right:0;top:0;
+            // }
             time {
                 position: absolute;
                 bottom: 35px;left:0;

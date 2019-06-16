@@ -19,8 +19,9 @@ module.exports = {
         },
         build: {
             env: 'production', // 当前环境
-            publicPath: '/admin/', // html引用资源路径
-            assetsPath: 'static', // 静态资源目录
+            publicPath: './',
+            assetsPath: './',
+            assetsPublicPath: '/',
             assetsSubDirectory: 'static', // html资源存放目录
             devtoolType: 'source-map', // 代码位置信息
             productionGzip: false, //开启Gzip压缩
@@ -48,8 +49,9 @@ module.exports = {
         },
         build: {
             env: 'production',
-            publicPath: '/client/',
-            assetsPath: 'static',
+            publicPath: './',
+            assetsPath: './',
+            assetsPublicPath: '/',
             assetsSubDirectory: 'static',
             devtoolType: 'source-map',
             productionGzip: false,

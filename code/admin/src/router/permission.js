@@ -16,6 +16,7 @@ router.beforeEach((to, from, next) => {
                 store.dispatch('getUserInfo').then( res => { //拉取用户信息
                     let roles = res.data.roles
                     store.dispatch('setRoutes', {roles}).then( () => { //根据权限动态添加路由
+                        console.log('添加',store.state.permission.addRouters)
                         router.addRoutes(store.state.permission.addRouters)
                         next({ ...to }) //hash模式  确保路由加载完成
                     });

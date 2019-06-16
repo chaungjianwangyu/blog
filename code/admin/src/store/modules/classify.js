@@ -7,6 +7,7 @@ export const sources = [
 
 //博客分类
 export const blogTypes = [ 
+    { name: '简历' },
     { name: 'HTML' },
     { name: 'CSS' },
     { name: 'JavaScript' },
@@ -19,6 +20,7 @@ export const blogTypes = [
     { name: '黑科技' }
 ]
 export const blogFilters = [
+    { text: '简历', value: '简历' },
     { text: 'HTML', value: 'HTML' },
     { text: 'CSS', value: 'CSS' },
     { text: 'JavaScript', value: 'JavaScript' },

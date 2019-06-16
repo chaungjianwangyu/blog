@@ -5,7 +5,10 @@ const app = {
             opened: Local.get('slideBarStatus')
         },
         tagViews: JSON.parse(Local.get('tagViews')) || [],
-        is_add_router: false
+        is_add_router: false,
+        sources : [
+            { name: '原创', id: 1 },
+        ]
     },
     mutations: {
         TOGGLE_SIDEBAR(state) {

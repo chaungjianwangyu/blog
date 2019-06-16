@@ -42,6 +42,8 @@
             </el-form-item>
 
         </el-form>
+
+        {{ sources }} nihao 
     </div>
 </article>
 </template>
@@ -92,12 +94,13 @@
             submitForm(formName) {
                 this.loading = true;
                 if (!this.info.markdown) {
-                    this.$message.warn('请填写文章内容')
+                    this.$message.error('请填写文章内容')
                     return
                 }
                 this.$refs[formName].validate( async (valid) => {
                     if (valid) {
                         try{
+                            console.log('进来')
                             this.info.html = this.info.markdown
                             await this.$store.dispatch('addBlog', this.info);
                             this.loading = false

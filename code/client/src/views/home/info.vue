@@ -2,7 +2,7 @@
     <section class="info-wrapper df-center">
         <div class="info-box">
             <div class="avatar"></div>
-            <h2 class="name">Wintermelon</h2>
+            <h2 class="name">Wang Yu</h2>
             <small class="desc">吃喝拉撒睡...</small>
         </div>
     </section>
@@ -15,13 +15,18 @@
         background-repeat: no-repeat;
         background-position: center center;
     }
+    
     .info-wrapper {
-       .bg-image-cover('../../images/cover.jpg');
+       .bg-image-cover('../../images/bg-blue.jpeg');
         width: 100%;
         height: 6rem;
         max-height: 400px;
         position: relative;
         text-align: center;
+
+        .info-box {
+            margin-top: 10px;
+        }
 
         .avatar {
             width: 80px;

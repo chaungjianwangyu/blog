@@ -49,6 +49,7 @@ export default {
     get(url, params) {
         if (!url) return
         return axios({
+          	//baseURL:"http://120.79.86.138:3000/",
             method: 'get',
             url: prefix + url,
             params,
@@ -58,6 +59,7 @@ export default {
     post(url, data) {
         if (!url) return
         return axios({
+          //baseURL:"http://120.79.86.138:3000/",
             method: 'post',
             url: prefix + url,
             data: qs.stringify(data),
