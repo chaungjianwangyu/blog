@@ -1,5 +1,7 @@
 # Vue + Node + Mongodb 开发一个完整博客流程
 
+## 线上地址： www.wangyublog.cn
+
 ## 本地开发:
 后台管理: localhost:8090
 
